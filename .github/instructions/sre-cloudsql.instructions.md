@@ -27,6 +27,9 @@ When relevant, check for:
 - Monitoring and alerting
 - Read replica strategy where appropriate
 - Storage and performance limits
+- Replica lag and replication health
+- Maintenance failover behavior
+- Storage growth and auto-increase settings
 
 ## Design and Review Checklist
 - Is HA enabled where uptime matters?
@@ -38,6 +41,9 @@ When relevant, check for:
 - Is the database isolated by environment?
 - Are credentials stored securely?
 - Are maintenance windows acceptable for the workload?
+- Is failover behavior tested in a non-production environment?
+- Are replication lag and connection saturation monitored?
+- Are storage growth limits and auto-increase behavior understood?
 
 ## SRE Operational Considerations
 - Prefer private connectivity when possible
@@ -45,6 +51,7 @@ When relevant, check for:
 - Validate backup restore procedures regularly
 - Document replication and failover behavior
 - Monitor storage growth, CPU, memory, connections, and replica lag
+- Prefer connection poolers and retry logic that are compatible with database failover
 
 ## Response Format
 1. Summary

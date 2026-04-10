@@ -26,6 +26,10 @@ When relevant, check for:
 - StatefulSet / PVC strategy
 - Rollout and rollback behavior
 - SecurityContext / PodSecurity settings
+- Service account and RBAC alignment
+- Ingress controller and external exposure model
+- Image pull policies and trusted registries
+- Pod security standards and namespace policies
 
 ## Design Principles
 - Prefer stateless workloads when possible
@@ -34,6 +38,8 @@ When relevant, check for:
 - Avoid overloading a single namespace or node pool
 - Make failure modes visible
 - Keep resource ownership clear
+- Prefer explicit platform boundaries for shared and application workloads
+- Make recovery and ownership responsibilities visible in manifests and deployment design
 
 ## Validation
 When possible, include:
@@ -43,6 +49,9 @@ When possible, include:
 - rollout checks
 - probe and resource verification
 - service exposure review
+- kubectl rollout status
+- kubectl describe for events and scheduling issues
+- policy or admission checks where available
 
 ## Response Format
 1. Summary
@@ -59,3 +68,4 @@ When possible, include:
 - Mention zone failure and disruption risk
 - Prefer clear, simple manifests
 - Avoid relying on implicit defaults where explicit config is better
+- Prefer explicit configuration for security, exposure, and scheduling instead of relying on defaults

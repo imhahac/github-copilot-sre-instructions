@@ -41,6 +41,8 @@ When relevant, consider:
 - Secure state and secret handling
 - Simple dependency graphs
 - Idempotent resource definitions
+- Remote state backend governance
+- Destructive changes must be called out explicitly before apply
 
 ## Kubernetes Guidance
 - Multi-zone resilience
@@ -51,6 +53,8 @@ When relevant, consider:
 - Network policies
 - Safe rollout and rollback
 - Stateful recovery planning
+- Ingress controller and external exposure model
+- Image pull and registry trust strategy
 
 ## GCP Service Design Checklist
 - Are managed services used where they reduce operational burden?
@@ -61,6 +65,8 @@ When relevant, consider:
 - Is the design cost-aware without sacrificing reliability?
 - Is each environment isolated appropriately?
 - Is there a clear rollback or recovery path?
+- Are operational dependencies like DNS, certificate issuance, and image registry availability accounted for?
+- Is the platform designed so that failures can be isolated to the smallest practical blast radius?
 
 ## Response Structure
 When useful, respond with:

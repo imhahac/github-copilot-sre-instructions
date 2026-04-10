@@ -26,6 +26,9 @@ When relevant, check for:
 - Secret Manager integration
 - State management
 - Artifact Registry or storage dependencies where needed
+- Remote state backend configuration
+- Cloud resource lifecycle and deletion protection
+- IAM bindings and service account impersonation
 
 ## Module Design
 Prefer:
@@ -45,6 +48,9 @@ Prefer:
 - Is drift detection considered?
 - Are resource dependencies intentional and minimal?
 - Could a partial apply leave the environment in a broken state?
+- Is the remote state backend secure and environment-scoped?
+- Are destructive operations protected by review and explicit confirmation?
+- Does the plan account for partial failure and recovery?
 
 ## Validation
 When possible, include:
@@ -53,6 +59,8 @@ When possible, include:
 - terraform plan
 - policy checks
 - peer review before apply
+- plan output review
+- static analysis or policy checks where available
 
 ## Response Format
 1. Summary
@@ -69,3 +77,4 @@ When possible, include:
 - Call out destructive changes
 - Mention state and drift risks
 - Prefer patterns that are easy to operate over clever abstractions
+- Prefer explicit lifecycle and dependency management over implicit behavior

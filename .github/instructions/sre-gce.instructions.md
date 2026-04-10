@@ -26,6 +26,8 @@ When relevant, check for:
 - SSH / IAP access
 - Shielded VM settings
 - Maintenance policy and restart behavior
+- Instance metadata and startup script validation
+- Backup and restore testing for persistent disks
 
 ## Design and Review Checklist
 - Are instances managed by templates or automation?
@@ -37,6 +39,8 @@ When relevant, check for:
 - Are instance names, zones, and roles clearly encoded?
 - Are there health checks that match real service readiness?
 - Is capacity sufficient for failover scenarios?
+- Are startup scripts idempotent and safe to rerun?
+- Is instance recovery documented for both zonal and regional failure scenarios?
 
 ## SRE Operational Considerations
 - Prefer managed instance groups over ad hoc VMs
@@ -44,6 +48,7 @@ When relevant, check for:
 - Document patching and reboot expectations
 - Use automation for provisioning and recovery
 - Ensure metadata, startup scripts, and persistent disks are versioned and understood
+- Prefer immutable instance templates and managed rollouts over in-place configuration changes
 
 ## Response Format
 1. Summary

@@ -26,6 +26,7 @@ When relevant, check for:
 - Load balancer exposure
 - Interconnect / VPN resilience
 - Egress controls
+- VPC Flow Logs and firewall logging
 
 ## Design and Review Checklist
 - Are failure domains isolated?
@@ -37,6 +38,8 @@ When relevant, check for:
 - Are network resources separated by environment?
 - Is the design easy to troubleshoot during incidents?
 - Are private and public endpoints intentionally chosen?
+- Are logging and flow visibility sufficient for incident debugging?
+- Are peering, Shared VPC, or VPN dependencies explicitly documented?
 
 ## SRE Operational Considerations
 - Document routing assumptions and dependencies
@@ -44,6 +47,7 @@ When relevant, check for:
 - Track IP usage for subnets and secondary ranges
 - Ensure load balancer, DNS, NAT, and egress paths are observable
 - Consider regional failure and how traffic shifts during an outage
+- Verify that network changes can be validated before broad rollout, especially for ingress and egress paths
 
 ## Response Format
 1. Summary

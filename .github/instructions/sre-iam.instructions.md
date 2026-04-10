@@ -24,6 +24,7 @@ When relevant, check for:
 - Secret access permissions
 - Break-glass access procedures
 - Audit logging for access changes
+- Service account keys should be avoided unless there is a documented exception
 
 ## Design and Review Checklist
 - Are roles scoped to the minimum necessary resource?
@@ -41,6 +42,7 @@ When relevant, check for:
 - Ensure service account keys are avoided where possible
 - Prefer Workload Identity over static credentials
 - Verify access changes do not block deployment or incident response paths
+- Prefer IAM changes that can be rolled back quickly without blocking incident response
 
 ## Response Format
 Use this structure when useful:
@@ -58,3 +60,4 @@ Use this structure when useful:
 - Call out privilege escalation risks
 - Mention operational impact if access is changed
 - If unclear, ask only for the minimum required context
+- If access patterns are unclear, ask whether the target is human access, workload access, or break-glass access

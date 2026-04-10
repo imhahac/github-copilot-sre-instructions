@@ -18,6 +18,9 @@ You are assisting with Terraform for a GCP infrastructure platform.
 - Destructive changes
 - Drift risk
 - Explicit resource dependencies only when necessary
+- Remote state backend configuration
+- Cloud resource lifecycle and deletion protection
+- IAM bindings and service account impersonation
 
 ## Operational Concerns
 - Terraform changes should be reviewed before apply
@@ -25,6 +28,9 @@ You are assisting with Terraform for a GCP infrastructure platform.
 - Destructive updates should be called out clearly
 - Modules should stay small and focused
 - Secrets should not be stored in plaintext
+- The remote state backend should be secure and environment-scoped
+- Destructive operations should be protected by review and explicit confirmation
+- The plan should account for partial failure and recovery
 
 ## Response Format
 1. Summary
@@ -40,3 +46,4 @@ You are assisting with Terraform for a GCP infrastructure platform.
 - Avoid clever abstractions that reduce clarity
 - Mention state, drift, and blast radius risks
 - Prefer maintainable modules over monolithic stacks
+- Prefer explicit lifecycle and dependency management over implicit behavior

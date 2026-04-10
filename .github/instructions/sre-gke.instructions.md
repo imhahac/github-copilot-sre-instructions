@@ -29,6 +29,9 @@ When relevant, check for:
 - Stateful workload strategy
 - Backup and restore
 - Rollout strategy
+- Workload Identity for Kubernetes service accounts
+- Admission control and policy enforcement
+- Image provenance and registry trust
 
 ## Design and Review Checklist
 - Does the workload have multiple replicas where needed?
@@ -40,6 +43,9 @@ When relevant, check for:
 - Are stateful components backed up?
 - Are dependencies like DNS, certificates, and secret stores accounted for?
 - Is namespace and RBAC design aligned with operational boundaries?
+- Are service account permissions aligned with workload identity usage?
+- Are admission policies preventing unsafe deployments?
+- Are container images sourced from trusted registries with clear provenance?
 
 ## SRE Operational Considerations
 - Prefer safe rollouts with clear rollback steps
@@ -47,6 +53,7 @@ When relevant, check for:
 - Ensure alerting corresponds to meaningful service impact
 - Validate autoscaling behavior under expected load
 - Confirm logging, metrics, and tracing are available for troubleshooting
+- Ensure cluster upgrades, node pool changes, and application rollouts have separate rollback plans
 
 ## Response Format
 1. Summary
